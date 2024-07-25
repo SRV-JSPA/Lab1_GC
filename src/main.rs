@@ -20,6 +20,7 @@ fn main() {
 
     dibujar_polygon1(&mut framebuffer);
     dibujar_polygon2(&mut framebuffer);
+    dibujar_polygon3(&mut framebuffer);
 
     let _ = framebuffer.render_buffer("out.bmp");
 }
@@ -77,6 +78,24 @@ fn dibujar_polygon2(framebuffer: &mut Framebuffer) {
     framebuffer.polygon(&poly2);   
 }
 
+fn dibujar_polygon3(framebuffer: &mut Framebuffer) {
+    framebuffer.set_current_color(0x0000FF); 
+    let poligono3 = vec![
+        Vec3::new(377.0, 249.0, 0.0),
+        Vec3::new(411.0, 197.0, 0.0), 
+        Vec3::new(436.0, 249.0, 0.0)
+    ];
+    framebuffer.fill_polygon(&poligono3);
+
+    framebuffer.set_current_color(0xFFFFFF); 
+    let poly3 = vec![
+        (377, 249), (411, 197), (436, 249)
+    ];
+
+    framebuffer.polygon(&poly3); 
+
+    
+}
 
 
 
